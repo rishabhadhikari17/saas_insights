@@ -13,6 +13,12 @@ FROM pg_stat_user_tables
 WHERE schemaname = 'saas'
 ORDER BY n_live_tup DESC;
 
-<img width="161" height="529" alt="image" src="https://github.com/user-attachments/assets/3085942c-2cf7-4f4d-944c-62e01c26918b" />
+<img width="344" height="529" alt="image" src="https://github.com/user-attachments/assets/bb3b0ccc-90e6-4b5c-9dcf-6d078ed46db5" />
 
+
+Interpretations:
+Data in the legacy tables is already present in the other tables
+Subscription_events --> Most used table,  user level event data is present in this table.
+
+<img width="1162" height="241" alt="image" src="https://github.com/user-attachments/assets/0635c18f-48ff-4291-9861-dc8e449bfd55" />
 
