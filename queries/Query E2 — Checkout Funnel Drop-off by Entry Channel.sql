@@ -1,3 +1,6 @@
+-- Query E2 — Checkout Funnel Drop-off by Entry Channel
+-- Where is checkout leaking, and is the leak the same across paid social vs organic search?
+
 with funnel_steps as (
 select 
 s.session_id
