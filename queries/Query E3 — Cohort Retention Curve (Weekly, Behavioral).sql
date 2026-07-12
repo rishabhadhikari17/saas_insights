@@ -1,3 +1,6 @@
+-- Query E3 — Cohort Retention Curve (Weekly, Behavioral)
+-- Of users who signed up in week W, what fraction came back and did something meaningful in week W+1, W+2, W+3, W+4?
+
 with meaningful_sessions as (
     select distinct
          c.customer_id
