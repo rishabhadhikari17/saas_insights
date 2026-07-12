@@ -1,3 +1,8 @@
+Built a 10-query B2C/B2B analytics deep dive (SQL, CTEs, window functions, cohort/funnel/MRR analysis) that surfaced a real retention collapse and multiple data-quality bugs, each resolved with a specific product recommendation.
+
+**Framing note:**
+The sharpest B2C-vs-B2B contrast isn't actually the two databases — it's inside the SaaS product itself. saas.accounts.account_type splits a single product into self_serve (single-user, B2C-motion) and b2b (multi-seat) segments. That means every S-series metric below (MRR movement, NRR/GRR, expansion vector) should really be read as two overlapping stories, not one.
+
 This repo covers two parallel analytics tracks: the E-commerce funnel (E1-E5) and the SaaS revenue engine (S1-S5)
 
 | Dimension | E-commerce (B2C) | SaaS (B2B) |
@@ -9,3 +14,15 @@ This repo covers two parallel analytics tracks: the E-commerce funnel (E1-E5) an
 | **Product/feature signal** | High-traffic products with below-median add-to-cart rates show a consistent ~30pp gap regardless of category (Makeup, Smartwatch, Jackets, etc.) — points to a systemic PDP issue, not a category-specific one | Feature adoption sample sizes are too small (1-18 adopters per feature out of 900 accounts) to draw causal conclusions about which features drive retention |
 | **Data quality flags found** | Query bugs surfaced and got fixed mid-analysis (funnel step typo `'select shipping'` vs `'select_shipping'`); partial/incomplete cohorts inflate or deflate rates if not caveated (right-censoring in retention & activation curves) | Partial-month cutoffs (June 2026 MRR data capped mid-month) and ambiguous column naming (`days_to_convert` actually measures account age at event time, not time-to-convert) caused early misreads |
 | **Overall read** | Funnel and activation health are **trending in the wrong direction recently** — worth prioritizing checkout UX and re-engagement | Revenue growth engine is fundamentally **healthy but a recent retention shock** (May/June 2025 cohorts) needs urgent root-cause investigation |
+
+**Repo Structure**
+queries/       -- all 10 SQL queries (E1-E5 e-commerce, S1-S5 SaaS), plus pending account_type cuts
+notes/         -- raw query outputs (CSVs) and screenshots referenced in the case study
+INTERPRETATIONS.md  -- per-query business interpretations + PM action lines, source material for this README and the case study
+CASE_STUDY.md  -- the long-form "B2C vs B2B" writing sample
+
+**Tech / Skills Demonstrated**
+CTEs & subqueries · window functions (percentile_cont, running sums, rank) · cohort analysis · funnel/step-conversion analysis · MRR decomposition & reconciliation (GRR/NRR) · right-censoring & selection-bias awareness · query debugging (join-type bugs, off-by-one date logic, silent miscounts) · translating SQL output into PM action
+
+**How to Run**
+Point any of the queries in queries/ at a Postgres instance with the ecom and saas schemas populated-no other setup required.
