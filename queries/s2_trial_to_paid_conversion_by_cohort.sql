@@ -1,3 +1,7 @@
+-- Query S2 — Trial-to-Paid Conversion by Cohort
+-- Of accounts that started a trial in week W, what fraction converted to paid by day 14, 30, 60?
+
+
 with first_trials as (
   select *,
          row_number() over (partition by account_id order by started_at) as rn
