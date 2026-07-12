@@ -1,6 +1,6 @@
--- select * from saas.subscription_events
--- where event_type='cancelled'
-
+-- Query S3 — Gross Revenue Churn and Net Revenue Retention by Cohort
+-- Of the MRR we had from a given monthly cohort 12 months ago, how much did we keep (gross retention) and how much did we keep INCLUDING expansion (net retention)?
+  
 with account_events as (
   select account_id
   , event_time
