@@ -1,3 +1,6 @@
+-- Query S1 — Monthly MRR Movement Decomposition
+-- How did MRR change last month — and what drove the change? New, expansion, contraction, or churn?
+
 with expansion_events as (
 select 
 account_id,
@@ -10,6 +13,7 @@ from saas.accounts
 join
 saas.subscription_events using (account_id)
 where event_time> current_date - interval '6 Months'
+and event_time <= date '2026-06-15'
 )
 select expansion_buckets
 , count(*) as expansion_events
