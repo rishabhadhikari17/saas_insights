@@ -1,5 +1,5 @@
--- Query S1 — Monthly MRR Movement Decomposition
--- How did MRR change last month — and what drove the change? New, expansion, contraction, or churn?
+-- Query S5 — Expansion Revenue: Who's Upgrading and Why
+-- Of accounts that expanded MRR in the last 6 months, what's the dominant expansion vector — seats added, plan upgrade, or add-on attach?
 
 with expansion_events as (
 select 
