@@ -1,5 +1,6 @@
 # Activation Curve: Time-to-First-Meaningful-Action
 **Business question:** "How fast do new signups become real users, and how has that changed cohort-over-cohort?"
+
 **Interpretations:**
 -  7-day activation climbed from 10% to a peak of 22% (week of May 18), then fell for three straight weeks to 8.8% by June 8 , a real, recent decline worth investigating (channel mix, onboarding changes, etc.)
 -   Median time-to-activate is dropping even as the activation rate falls, suggesting the remaining activators are high-intent "easy converts," while a growing share of new signups aren't engaging at all in their first week.
