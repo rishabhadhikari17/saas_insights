@@ -1,3 +1,6 @@
+-- Query E5 — Cart Abandonment by Cart Value Bucket
+-- Cart abandonment is 70% overall — but is it the same for ₹500 carts as ₹15,000 carts? Where do we lose the most rupees?
+
 with sessions as (
 select session_id
 , lower(event_type) event_name
