@@ -1,3 +1,6 @@
+-- Query E4 — PDP Engagement: High-View, Low-Cart Products
+-- Which products attract eyeballs but don't get added to cart? Those are either pricing problems, image problems, or stock problems.
+
 with product_info as (
 select
 p.product_id
