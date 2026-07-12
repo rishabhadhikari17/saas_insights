@@ -4,7 +4,7 @@ s.session_id
 , sc.channel
 , max(case  when lower(se.event_type)='begin_checkout' then 1 
 		when lower(se.event_type)='add_address' then 2
-		when lower(se.event_type)='select shipping' then 3
+		when lower(se.event_type)='select_shipping' then 3
 		when lower(se.event_type)='add_payment' then 4
 		when lower(se.event_type)='purchase' then 5
 		else 0 end) as max_step
