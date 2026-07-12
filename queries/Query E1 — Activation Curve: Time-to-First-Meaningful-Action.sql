@@ -1,9 +1,13 @@
+-- Query E1 — Activation Curve: Time-to-First-Meaningful-Action
+-- How fast do new signups become real users, and how has that changed cohort-over-cohort?
+
 with cohort_signups as (
 select
 customer_id
 , created_at
 , date_trunc('week',created_at) as signup_week
 from ecom.customers
+where created_at>= date '2026-04-19'
 )
 ,meaningful_actions as (
 select se.customer_id
