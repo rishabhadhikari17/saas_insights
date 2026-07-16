@@ -28,7 +28,12 @@ Specifically:
 **Business question:** "Of users who signed up in week W, what fraction came back and did *something meaningful* in week W+1, W+2, W+3, W+4?"
 
 **Interpretations:**
-- For most cohorts, W2 or W4 retention is higher than the preceding week, which is unusual for a typical decay curve -this could reflect real re-engagement (e.g., weekly email campaigns, restock notifications) or may indicate a session/join issue worth double-checking.
+- Cohorts April 13 – May 4 are fully observed and show healthy, stable retention. W1 retention runs 25–36%, and W4 doesn't collapse relative to W1
+- W4 doesn't collapse relative to W1 — it's often flat or even higher (April 20: 30.3% → 36.6%; April 13: 24.8% → 36.4%). No sign of a habit-formation drop-off in the reliable data.
+- w0_active < cohort_size is expected, not a bug: cohort_size counts every signup that week, while w0_active only counts those who took a meaningful action (product_view/add_to_cart/purchase) in that same week. The gap is real customers who signed up but didn't engage meaningfully in week 0 they still bounced, browsed without viewing a product, or never returned at all
+
+**PM Action**
+- Neither the activation-bottleneck nor the habit-formation fix applies — W1 is well above the 20% threshold (25–36%) and W4 doesn't collapse in any fully-observed cohort.
 
 
 # PDP Engagement: High-View, Low-Cart Products
