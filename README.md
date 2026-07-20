@@ -16,10 +16,9 @@ This repo covers two parallel analytics tracks: the E-commerce funnel (E1-E5) an
 | **Overall read** | Funnel and activation health are **trending in the wrong direction recently** — worth prioritizing checkout UX and re-engagement | Revenue growth engine is fundamentally **healthy but a recent retention shock** (May/June 2025 cohorts) needs urgent root-cause investigation |
 
 **Repo Structure**
-queries/       -- all 10 SQL queries (E1-E5 e-commerce, S1-S5 SaaS), plus pending account_type cuts
-notes/         -- raw query outputs (CSVs) and screenshots referenced in the case study
-INTERPRETATIONS.md  -- per-query business interpretations + PM action lines, source material for this README and the case study
-CASE_STUDY.md  -- the long-form "B2C vs B2B" writing sample
+- queries/       -- all 10 SQL queries (E1-E5 e-commerce, S1-S5 SaaS), plus pending account_type cuts
+- notes/         -- raw query outputs (CSVs) and screenshots referenced in the case study
+- INTERPRETATIONS.md  -- per-query business interpretations + PM action lines, source material for this README and the case study
 
 **Tech / Skills Demonstrated**
 CTEs & subqueries · window functions (percentile_cont, running sums, rank) · cohort analysis · funnel/step-conversion analysis · MRR decomposition & reconciliation (GRR/NRR) · right-censoring & selection-bias awareness · query debugging (join-type bugs, off-by-one date logic, silent miscounts) · translating SQL output into PM action
