@@ -1,5 +1,5 @@
-## Query E1 — Activation Curve: Time-to-First-Meaningful-Action
-## How fast do new signups become real users, and how has that changed cohort-over-cohort?
+-- Query E1 — Activation Curve: Time-to-First-Meaningful-Action
+-- How fast do new signups become real users, and how has that changed cohort-over-cohort?
 
 with cohort_signups as (
 select
